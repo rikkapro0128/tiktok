@@ -1,31 +1,31 @@
-import GlobalStyles from './components/GlobalStyles'
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
-import { publicRoutes } from './routes'
-import DefaultLayout from './layouts/DefaultLayout';
+import GlobalStyles from './components/GlobalStyles';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { publicRoutes } from './routes';
+import { DefaultLayout, OnlyHeader } from '@/layouts';
 
 function App() {
   return (
     <GlobalStyles>
       <Router>
         <Routes>
-          {
-            publicRoutes.map(
-              (routing, index) => {
-              let Layout = DefaultLayout
-              const Componenent = routing.element;
-              return (
-                <Route key={index} path={routing.path} element={
+          {publicRoutes.map((routing, index) => {
+            let Layout = DefaultLayout;
+            const Componenent = routing.element;
+            if (routing.layout === 'onlyHeader') {
+              Layout = OnlyHeader;
+            }
+            return (
+              <Route
+                key={index}
+                path={routing.path}
+                element={
                   <Layout>
-                    <Componenent/>
+                    <Componenent />
                   </Layout>
-                }/>
-              )
-            })
-          }
+                }
+              />
+            );
+          })}
         </Routes>
       </Router>
     </GlobalStyles>
