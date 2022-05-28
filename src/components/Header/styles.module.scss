@@ -14,31 +14,59 @@
     justify-content: space-between;
     .logo {
       font-size: 0;
+      cursor: pointer;
     }
     .search {
+      max-height: 46px;
       padding: 12px 16px;
       display: flex;
       align-items: center;
       background-color: var(--bg-search-header);
       border-radius: 92px;
       overflow: hidden;
-      &.focus {
+      &:focus-within {
         border: 1.5px solid rgba(22, 24, 35, 0.2);
       }
-      input {
-        background-color: transparent;
-        width: var(--size-search-header);
-        font-size: 1.6rem;
-        font-weight: 400;
-        caret-color: var(--color-cursor-blink);
-        line-height: 22px;
-        color: var(--color-primary);
-        font-weight: 500;
-        &::placeholder {
-          line-height: 22px;
+      .wrapInput {
+        position: relative;
+        input {
+          background-color: transparent;
+          width: var(--size-search-header);
+          font-size: 1.6rem;
+          font-weight: 400;
+          caret-color: var(--color-cursor-blink);
+          line-height: 1.6rem;
+          color: var(--color-primary);
+          &::placeholder {
+            line-height: 1.6rem;
+          }
+        }
+        & > svg {
+          cursor: pointer;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          margin-right: 1.3rem;
+        }
+        & > div {
+          @keyframes miruRotate {
+            from {
+              transform: translateY(-50%) rotate(0deg);
+            }
+            to {
+              transform: translateY(-50%) rotate(359deg);
+            }
+          }
+          animation: miruRotate 500ms infinite linear;
+          margin-right: 1.3rem;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          height: 16px;
         }
       }
-      span {
+      .verticalSplit {
         display: block;
         width: 1px;
         height: 28px;
@@ -46,12 +74,17 @@
         align-items: center;
         background-color: rgba(22, 24, 35, 0.12);
       }
-      div {
+      .searchIcon {
         margin: -12px -16px;
         padding: 11px 16px 11px 12px;
         margin-left: 0;
         font-size: 0;
         cursor: pointer;
+        &.bold {
+          svg {
+            fill: var(--bold-svg);
+          }
+        }
         &:hover {
           background-color: rgba(22, 24, 35, 0.03);
         }
@@ -59,6 +92,9 @@
           height: 24px;
         }
       }
+    }
+    & + div[data-tippy-root] {
+      width: 100%;
     }
     .control {
       display: flex;
@@ -111,8 +147,15 @@
         div {
           height: 32px;
           background-size: 100%;
+          border-radius: 50%;
+          border: 0.1px solid #000;
+          background-position: center center;
         }
       }
     }
   }
+}
+
+.popper {
+  width: 361px;
 }

@@ -3,8 +3,11 @@
   --color-primary: rgb(71, 71, 71);
   --color-cursor-blink: rgba(254, 44, 85, 1);
   --bg-search-header: rgba(22, 24, 35, 0.06);
-  --bg-btn-upload-header: rgba(22, 24, 35, 0.06);
+  --bg-btn-upload-header: rgba(22, 24, 35, 0.03);
   // set default (size block)
   --size-header: 1150px;
   --size-search-header: 292px;
+  // color for svg
+  --bold-svg: rgba(22, 24, 35, 0.75);
+  --pale-svg: rgba(22, 24, 35, 0.2);
 }
