@@ -1,8 +1,14 @@
 import { memo } from 'react';
 
-export const SearchIcon = () => {
+export const SearchIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg width="24" height="24" viewBox="0 0 48 48" fill="rgba(22, 24, 35, 0.34)" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 48 48"
+      fill="rgba(22, 24, 35, 0.34)"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -12,12 +18,12 @@ export const SearchIcon = () => {
   );
 };
 
-export const MessageIcon = () => {
+export const MessageIcon = ({ height = '16', width = '16', className }) => {
   return (
     <svg
-      className="tiktok-stut8h-StyledIcon e1nx07zo1"
-      width="1em"
-      height="1em"
+      height={height}
+      width={width}
+      className={className}
       viewBox="0 0 48 48"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -31,12 +37,12 @@ export const MessageIcon = () => {
   );
 };
 
-export const NotifyIcon = () => {
+export const NotifyIcon = ({ height = '32', width = '32', className }) => {
   return (
     <svg
-      className="tiktok-1g0p6jv-StyledInboxIcon e18kkhh41"
-      width="32"
-      height="32"
+      height={height}
+      width={width}
+      className={className}
       viewBox="0 0 32 32"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -50,12 +56,12 @@ export const NotifyIcon = () => {
   );
 };
 
-export const UploadIcon = () => {
+export const UploadIcon = ({ height = '16', width = '16', className }) => {
   return (
     <svg
-      className="tiktok-qeydvm-StyledPlusIcon e18d3d944"
-      width="1em"
-      height="1em"
+      height={height}
+      width={width}
+      className={className}
       viewBox="0 0 16 16"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -156,6 +162,27 @@ export const RemoveIcon = memo(({ height = '16', width = '16', onRemoveSearchVal
   );
 });
 
+export const TickBlue = ({ height = '16', width = '16', className }) => {
+  return (
+    <svg
+      className={className}
+      width={width}
+      height={height}
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx={24} cy={24} r={24} fill="#20D5EC" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M37.121 15.879a3 3 0 0 1 0 4.242l-13.5 13.5a3 3 0 0 1-4.242 0l-8.5-8.5a3 3 0 1 1 4.242-4.242l6.379 6.378L32.879 15.88a3 3 0 0 1 4.242 0Z"
+        fill="#fff"
+      />
+    </svg>
+  );
+};
+
 export const LoadingIcon = ({ height = '16', width = '16', className }) => {
   return (
     <svg
@@ -173,6 +200,26 @@ export const LoadingIcon = ({ height = '16', width = '16', className }) => {
         strokeWidth="4"
         d="M36 24c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12v0"
       ></path>
+    </svg>
+  );
+};
+
+export const UserIcon = ({ height = '16', width = '16', className }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0"
+      y="0"
+      enableBackground="new 0 0 489 489"
+      version="1.1"
+      viewBox="0 0 489 489"
+      xmlSpace="preserve"
+      height={height}
+      width={width}
+      className={className}
+    >
+      <path d="M417.4 71.6C371.2 25.4 309.8 0 244.5 0S117.8 25.4 71.6 71.6 0 179.2 0 244.5s25.4 126.7 71.6 172.9S179.2 489 244.5 489s126.7-25.4 172.9-71.6S489 309.8 489 244.5s-25.4-126.7-71.6-172.9zM244.5 462C124.6 462 27 364.4 27 244.5S124.6 27 244.5 27 462 124.6 462 244.5 364.4 462 244.5 462z"></path>
+      <path d="M244.5 203.2c35.1 0 63.6-28.6 63.6-63.6s-28.5-63.7-63.6-63.7-63.6 28.6-63.6 63.6 28.5 63.7 63.6 63.7zm0-100.3c20.2 0 36.6 16.4 36.6 36.6s-16.4 36.6-36.6 36.6-36.6-16.4-36.6-36.6 16.4-36.6 36.6-36.6zM340.9 280.5c-22.3-32.8-54.7-49.5-96.4-49.5s-74.1 16.6-96.4 49.5c-16.6 24.4-27.2 57.7-31.4 98.7-.8 7.4 4.6 14.1 12 14.8 7.4.8 14.1-4.6 14.8-12 8.5-82.3 42.5-124 101-124s92.5 41.7 101 124c.7 6.9 6.6 12.1 13.4 12.1.5 0 .9 0 1.4-.1 7.4-.8 12.8-7.4 12-14.8-4.2-41.1-14.8-74.3-31.4-98.7z"></path>
     </svg>
   );
 };
